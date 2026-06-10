@@ -1,6 +1,6 @@
 # Phân tích Bão Nhiệt đới Khu vực Việt Nam — IBTrACS v4
 
-Dự án thu thập, tiền xử lý và phân tích quỹ đạo, cường độ bão nhiệt đới ảnh hưởng đến Việt Nam giai đoạn **2000–2025**, sử dụng bộ dữ liệu **IBTrACS v4** phân phối qua HDX (Humanitarian Data Exchange).
+Dự án thu thập, tiền xử lý và phân tích quỹ đạo, cường độ bão nhiệt đới ảnh hưởng đến Việt Nam giai đoạn **2000–2025**, sử dụng bộ dữ liệu **IBTrACS v4** phân phối qua HDX (Humanitarian Data Exchange). Bộ dữ liệu gốc được HDX lọc sẵn trong phạm vi **2000km** tính từ bờ biển Việt Nam.
 
 **Môn học**: DS108 – Tiền xử lý và xây dựng bộ dữ liệu  
 **Trường**: Đại học Công nghệ Thông tin – ĐHQG TP. Hồ Chí Minh  
