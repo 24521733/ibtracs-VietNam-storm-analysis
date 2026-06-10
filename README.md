@@ -15,7 +15,8 @@ Dự án thu thập, tiền xử lý và phân tích quỹ đạo, cường đ�
 2. [Yêu cầu môi trường](#2-yêu-cầu-môi-trường)
 3. [Hướng dẫn chạy](#3-hướng-dẫn-chạy)
 4. [Pipeline tổng thể](#4-pipeline-tổng-thể)
-5. [Lưu ý kỹ thuật](#5-lưu-ý-kỹ-thuật)
+5. [Streamlit Dashboard](#5-streamlit-dashboard)
+6. [Lưu ý kỹ thuật](#6-lưu-ý-kỹ-thuật)
 
 ---
 
@@ -46,6 +47,8 @@ project_root/
 │
 ├── output/
 │   └── 08_track_globe.html                   ← Bản đồ quỹ đạo 3D tương tác (output notebook 08)
+│
+├── app.py                                    ← Streamlit dashboard (4 tabs)
 ├── requirements.txt
 └── README.md
 ```
@@ -129,7 +132,46 @@ ibtracs_all_list_v04r01_vnm.csv
 
 ---
 
-## 5. Lưu ý kỹ thuật
+## 5. Streamlit Dashboard
+
+Dự án đi kèm một dashboard tương tác xây dựng bằng **Streamlit**, trực quan hóa toàn bộ kết quả phân tích từ `final_dataset.csv`.
+
+### Chạy app
+
+```bash
+streamlit run app.py
+```
+
+Truy cập tại `http://localhost:8501`.
+
+### Cấu trúc app
+
+App gồm 4 tab:
+
+| Tab | Nội dung |
+|-----|----------|
+| 📊 Tổng quan | Metrics tổng hợp, phân bố theo năm / tháng / cấp bão / mùa bão |
+| 🗺️ Quỹ đạo bão | Bản đồ quỹ đạo theo cấp bão (Plotly) và Heatmap mật độ KDE (Cartopy) |
+| 📈 Phân tích cường độ | Violin plot WMO_WIND/PRES, STL Decomposition, ACF/PACF, phân bố theo mùa |
+| 🔍 Khám phá dữ liệu | Bảng dữ liệu có thể lọc theo từng cơn bão hoặc toàn bộ quan trắc |
+
+### Bộ lọc sidebar
+
+Tất cả tab (trừ Tab 3 – khóa 2000–2024 cho STL) phản ứng với bộ lọc:
+
+- **Năm**: slider chọn khoảng năm
+- **Basin**: multiselect
+- **Cấp bão** (`PEAK_CAT_FINAL`): TD / TS / STS / TY
+- **Mùa bão** (`SEASON`): Early / Peak / Late / Off
+
+### Lưu ý
+
+- Tab 3 luôn dùng dữ liệu 2000–2024 (khóa cứng) để đảm bảo chuỗi thời gian liên tục cho STL; bộ lọc Basin và Mùa bão vẫn được áp dụng.
+- Năm 2025 có dữ liệu quỹ đạo nhưng **không có WMO_WIND/WMO_PRES** nên không xuất hiện trong phân tích cường độ.
+
+---
+
+## 6. Lưu ý kỹ thuật
 
 **Dữ liệu năm 2025 thiếu hoàn toàn WMO_WIND/WMO_PRES:**  
 Do JMA chưa phát hành best track chính thức cho năm 2025 tại thời điểm tải dữ liệu. Notebook 07 tự động loại năm 2025 khỏi phân tích cường độ thông qua cột `HAS_INTENSITY`.
