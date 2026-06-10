@@ -141,9 +141,6 @@ Dự án đi kèm một dashboard tương tác xây dựng bằng **Streamlit**,
 ```bash
 streamlit run app.py
 ```
-
-Truy cập tại `http://localhost:8501`.
-
 ### Cấu trúc app
 
 App gồm 4 tab:
