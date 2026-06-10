@@ -6,6 +6,7 @@ Dự án thu thập, tiền xử lý và phân tích quỹ đạo, cường đ�
 **Trường**: Đại học Công nghệ Thông tin – ĐHQG TP. Hồ Chí Minh  
 **Nhóm thực hiện**: Vũ Minh Thư (24521733) · Đào Nguyễn Minh Thư (24521723)  
 **GVHD**: TS. Nguyễn Gia Tuấn Anh · CN. Trần Quốc Khánh
+
 ---
 
 ## Mục lục
