@@ -68,9 +68,9 @@ pip install -r requirements.txt
 
 Cấu trúc thư mục và dữ liệu thô đã được cung cấp sẵn, không cần thiết lập thêm.
 
-1. `01_EDA_raw.ipynb` có thể chạy ngay — chỉ cần dữ liệu thô, không phụ thuộc bước nào.
+1. `01_EDA_raw.ipynb` có thể chạy ngay - chỉ cần dữ liệu thô, không phụ thuộc bước nào.
 
-2. Mở Jupyter Notebook hoặc JupyterLab, chạy các notebook **theo đúng thứ tự** — mỗi notebook đọc output của notebook trước:
+2. Mở Jupyter Notebook hoặc JupyterLab, chạy các notebook **theo đúng thứ tự** - mỗi notebook đọc output của notebook trước:
 
 ```
 02 → 03 → 04 → 05
