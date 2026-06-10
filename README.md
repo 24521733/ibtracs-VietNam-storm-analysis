@@ -133,3 +133,6 @@ ibtracs_all_list_v04r01_vnm.csv
 
 **Dữ liệu năm 2025 thiếu hoàn toàn WMO_WIND/WMO_PRES:**  
 Do JMA chưa phát hành best track chính thức cho năm 2025 tại thời điểm tải dữ liệu. Notebook 07 tự động loại năm 2025 khỏi phân tích cường độ thông qua cột `HAS_INTENSITY`.
+
+**Dataset chỉ phù hợp cho phân tích và trực quan hóa, không khuyến nghị dùng cho mô hình dự đoán:**  
+Các giá trị WMO_WIND/WMO_PRES được nội suy bằng PCHIP/Linear — đây là giá trị ước lượng, không phải quan trắc thực tế, có thể làm lệch kết quả nếu dùng làm features cho ML model.
